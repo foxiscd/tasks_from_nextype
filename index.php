@@ -1,2 +1,6 @@
 <?php
-require __DIR__ . '/Task2.1.php';
+
+$taskNumber = '2.2';
+
+require __DIR__ . '/tasks/Task' . $taskNumber . '.php';
+

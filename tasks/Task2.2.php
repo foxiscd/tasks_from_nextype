@@ -13,7 +13,15 @@ function getUrl(string $url): array
     $pattern = '~<a href="(.*?)"~';
     preg_match_all($pattern, $file, $matches);
     unset($matches[0]);
-    return $matches;
+    $array = [];
+    foreach ($matches[1] as $match) {
+       if(preg_match('~(^/).*$~' , $match)){
+           $array[] = $url . $match;
+       } else {
+           $array[] = $match;
+       }
+    }
+    return $array;
 }
 
 ?>
@@ -34,7 +42,7 @@ function getUrl(string $url): array
         <hr>
         <h2>Решение:</h2>
         <?php echo '<pre>';
-        var_dump(getUrl($url)); ?>
+        print_r(getUrl($url)); ?>
     </div>
 </div>
 </body>

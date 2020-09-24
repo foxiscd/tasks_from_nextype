@@ -34,7 +34,7 @@ function array_sort(array $arrays, string $item, string $sort = 'DESC'): array
     return $newArray;
 }
 
-$arraySortDesc = array_sort($arrays, 'sort', 'DESC');
+$arraySortDesc = array_sort($arrays, 'sort', 'ASC');
 
 ?>
 
